@@ -1,0 +1,47 @@
+[user]
+	name = Robert Walecki 
+	email = rw2614@imperial.ac.uk
+
+
+[core]
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+
+[alias]
+    s = status -s
+	d = difftool
+    c = commit
+    l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --graph
+    o = checkout
+    ob = checkout -b
+    b = branch
+
+[color]
+    ui = always 
+    
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+
+[diff]
+	tool = vimdiff
+[push]
+    default = matching 
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff

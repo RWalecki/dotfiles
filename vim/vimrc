@@ -1,0 +1,108 @@
+ " Theme
+syntax enable
+set background=dark
+set termguicolors
+colorscheme molokai 
+set nocp 
+set cursorline
+set laststatus=2                    "always show the status line
+set hlsearch                        "highlight search results
+set incsearch                       "start search when type the first character
+set ignorecase                      "ignore capital low letter
+set smartcase                       "do not ignore case if search has capital letter
+set noswapfile                      "no swap files
+set cmdheight=1                     "number of lines for the command area
+set title                           "file name in title
+set visualbell t_vb=                "no visual bell		
+set expandtab                       "use spaces instead of tab
+set scrolloff=5                     "keep 5 lines of context
+set number                          "number bar at the left
+set formatoptions=tcr               "keep comment block after return
+set completeopt-=preview            "dont open completion window at the topo 
+set completeopt=longest,menuone     "Do not select first item in auto-complete
+set backspace=indent,eol,start      "activate Backspace
+set splitbelow                      "split like in tmux
+set splitright                      "split like in tmux
+set hidden                          "unsaved buffer keeps change when it goes to the background
+set confirm                         "ask for confirmation to save file before exit vim
+set showtabline=2                   "always show tabbar
+
+set mouse=
+set t_ut=
+
+inoremap jk <Esc>
+vnoremap jk <Esc>
+
+" Window navigation
+let mapleader=";"
+noremap <Leader>s :split <C-R>=fnamemodify(".",":p") . '/' <cr><cr><esc>
+noremap <Leader>v :vnew <C-R>=fnamemodify(".",":p") . '/' <cr><cr><esc>
+noremap <c-n> :tabnext<cr>
+noremap <c-n> :tabnext<cr>
+noremap <c-p> :tabpre<cr>
+
+" Other Vim Basics 
+noremap <Leader>w :w!<cr>
+noremap <Leader>q :q<cr>
+noremap <Leader>p :!git push<cr>
+noremap <Leader>1 :set foldlevel=0<cr>
+noremap <Leader>2 :set foldlevel=1<cr>
+noremap <Leader>3 :set foldlevel=2<cr>
+noremap <Leader>4 :set foldlevel=3<cr>
+noremap <LEader>5 :set foldlevel=99<cr>
+
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
+
+" fly through lines
+noremap <C-k> <C-y><C-y><C-y>
+noremap <C-j> <C-e><C-e><C-e>
+
+" ignore soft lines 
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+
+" Block visual mode 
+noremap <Space>v <C-v> 
+
+"enable cursor line in current window only"
+augroup CursorLine
+    au!
+    au! VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au! WinLeave * setlocal nocursorline
+augroup END
+hi CursorLine   cterm=NONE ctermbg=gray guibg=Gray20
+
+let g:jedi#popup_on_dot = 1
+let g:neocomplcache_enable_at_startup = 1
+let g:SimpylFold_docstring_preview=1
+
+
+noremap <Leader>b oimport ipdb; ipdb.set_trace()<Esc>
+inoremap <Leader>b <cr>import ipdb; ipdb.set_trace()<Esc>
+au BufNewFile,BufRead *.py 
+    \ set foldmethod=indent|
+    \ set foldlevel=1      |
+    \ set softtabstop=4    |
+    \ set shiftwidth=4     |
+    \ set textwidth=79     |
+    \ set expandtab	   |
+    \ set autoindent       |
+    \ set fileformat=unix  |
+    \ set encoding=utf-8   |
+map <leader>e :NERDTreeTabsToggle<CR>
+
+map <C-c> <plug>NERDCommenterToggle
+imap <C-c> <ESC><plug>NERDCommenterToggle i
+
+"iterm cuserstyle
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
