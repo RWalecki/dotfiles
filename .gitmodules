@@ -31,3 +31,9 @@
 [submodule "vim/vim/pack/themes/start/vim-wombat256mod.git"]
 	path = vim/vim/pack/themes/start/vim-wombat256mod.git
 	url = https://github.com/michalbachowski/vim-wombat256mod.git
+[submodule "vim/vim/pack/editor/easy-align.git"]
+	path = vim/vim/pack/editor/easy-align.git
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vim/vim/pack/editor/start/easy-align.git"]
+	path = vim/vim/pack/editor/start/easy-align.git
+	url = https://github.com/junegunn/vim-easy-align.git

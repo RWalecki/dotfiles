@@ -1,8 +1,11 @@
- " Theme
 syntax enable
-set background=dark
+filetype plugin indent on
+
+" Theme
 set termguicolors
+set background=dark
 colorscheme molokai 
+
 set nocp 
 set cursorline
 set laststatus=2                    "always show the status line
@@ -29,6 +32,7 @@ set showtabline=2                   "always show tabbar
 
 set mouse=
 set t_ut=
+hi SpellBad guifg=red guibg=NONE ctermfg=white ctermbg=red
 
 inoremap jk <Esc>
 vnoremap jk <Esc>
@@ -74,7 +78,7 @@ augroup CursorLine
     au! VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     au! WinLeave * setlocal nocursorline
 augroup END
-hi CursorLine   cterm=NONE ctermbg=gray guibg=Gray20
+hi CursorLine   cterm=NONE ctermbg=238 guibg=Gray20
 
 let g:jedi#popup_on_dot = 1
 let g:neocomplcache_enable_at_startup = 1
@@ -83,16 +87,18 @@ let g:SimpylFold_docstring_preview=1
 
 noremap <Leader>b oimport ipdb; ipdb.set_trace()<Esc>
 inoremap <Leader>b <cr>import ipdb; ipdb.set_trace()<Esc>
+
+
 au BufNewFile,BufRead *.py 
     \ set foldmethod=indent|
     \ set foldlevel=1      |
     \ set softtabstop=4    |
     \ set shiftwidth=4     |
-    \ set textwidth=79     |
     \ set expandtab	   |
     \ set autoindent       |
     \ set fileformat=unix  |
     \ set encoding=utf-8   |
+
 map <leader>e :NERDTreeTabsToggle<CR>
 
 map <C-c> <plug>NERDCommenterToggle
