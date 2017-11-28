@@ -31,9 +31,15 @@
 [submodule "vim/vim/pack/themes/start/vim-wombat256mod.git"]
 	path = vim/vim/pack/themes/start/vim-wombat256mod.git
 	url = https://github.com/michalbachowski/vim-wombat256mod.git
-[submodule "vim/vim/pack/editor/easy-align.git"]
-	path = vim/vim/pack/editor/easy-align.git
-	url = https://github.com/junegunn/vim-easy-align.git
 [submodule "vim/vim/pack/editor/start/easy-align.git"]
 	path = vim/vim/pack/editor/start/easy-align.git
 	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vim/vim/pack/editor/start/vim-easy-align.git"]
+	path = vim/vim/pack/editor/start/vim-easy-align.git
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vim/vim/pack/editor/start/vim-gitgutter.git"]
+	path = vim/vim/pack/editor/start/vim-gitgutter.git
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/vim/pack/editor/start/vim-fugitive.git"]
+	path = vim/vim/pack/editor/start/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git

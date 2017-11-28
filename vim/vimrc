@@ -29,6 +29,7 @@ set splitright                      "split like in tmux
 set hidden                          "unsaved buffer keeps change when it goes to the background
 set confirm                         "ask for confirmation to save file before exit vim
 set showtabline=2                   "always show tabbar
+set updatetime=250                  "set update time to .25s (default is 4s)
 
 set mouse=
 set t_ut=
