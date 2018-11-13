@@ -45,7 +45,8 @@ for i in ${SOURCES[*]}; do
     #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$i/lib
 
 done
-export PATH=$PATH:/usr/texbin
+#export PATH=$PATH:/usr/texbin
+export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
 
 #Python environment and settings
 export PYTHONWARNINGS="ignore"
@@ -53,3 +54,15 @@ export PYTHONWARNINGS="ignore"
 export LD_LIBRARY_PATH=$HOME/.cuda/lib64:$LD_LIBRARY_PATH
 #export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$HOME/.cuda/lib$DYLD_LIBRARY_PATH
 export PATH="$HOME/.cuda/bin:$PATH"
+
+# use autoenv to manage virtual environments
+source /Users/robert.walecki/.miniconda/bin/activate.sh 
+smart_env () {
+    mkdir $1
+    virtualenv $1/.env_$1
+    echo "source .env_$1/bin/activate" > ./$1/.env
+    echo ".env*" > ./.gitignore
+    yes | cd $1
+    pip install ipdb
+    pip install numpy
+}
