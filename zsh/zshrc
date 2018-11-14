@@ -61,8 +61,8 @@ smart_env () {
     mkdir $1
     virtualenv $1/.env_$1
     echo "source .env_$1/bin/activate" > ./$1/.env
-    echo ".env*" > ./.gitignore
-    yes | cd $1
+    echo ".env*" > $1/.gitignore
+    yes | cd $1 >/dev/null 2>&1
     pip install ipdb
     pip install numpy
 }
