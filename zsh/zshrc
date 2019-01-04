@@ -48,6 +48,7 @@ done
 #export PATH=$PATH:/usr/texbin
 export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
 
+
 #Python environment and settings
 export PYTHONWARNINGS="ignore"
 
@@ -56,13 +57,26 @@ export LD_LIBRARY_PATH=$HOME/.cuda/lib64:$LD_LIBRARY_PATH
 export PATH="$HOME/.cuda/bin:$PATH"
 
 # use autoenv to manage virtual environments
-source /Users/robert.walecki/.miniconda/bin/activate.sh 
-smart_env () {
-    mkdir $1
-    virtualenv $1/.env_$1
-    echo "source .env_$1/bin/activate" > ./$1/.env
-    echo ".env*" > $1/.gitignore
-    yes | cd $1 >/dev/null 2>&1
+source $BREW/opt/autoenv/activate.sh
+smart_env3 () {
+    dir=${PWD##*/}
+    echo $dir
+    yes | conda create python=3.6 -p $PWD/.$dir
+    echo "source activate $PWD/.$dir" > .env
+    echo ".env*\n.$dir" > .gitignore
+    yes | cd $PWD >/dev/null 2>&1
+    yes | conda install numpy
     pip install ipdb
-    pip install numpy
 }
+smart_env2 () {
+    dir=${PWD##*/}
+    echo $dir
+    yes | conda create python=2.7 -p $PWD/.$dir
+    echo "source activate $PWD/.$dir" > .env
+    echo ".env*\n.$dir" > .gitignore
+    yes | cd $PWD >/dev/null 2>&1
+    yes | conda install numpy
+    pip install ipdb
+}
+export PYTHONPATH=$PYTHONPATH:/Users/robert.walecki/projects/pgm-cv
+export PYTHONPATH=$PYTHONPATH:/Users/robert.walecki/projects/data-science-research/disability-w-pred/utils
