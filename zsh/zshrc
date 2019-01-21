@@ -80,3 +80,4 @@ smart_env2 () {
 }
 export PYTHONPATH=$PYTHONPATH:/Users/robert.walecki/projects/pgm-cv
 export PYTHONPATH=$PYTHONPATH:/Users/robert.walecki/projects/data-science-research/disability-w-pred/utils
+alias tm="tmux attach || tmux new"
