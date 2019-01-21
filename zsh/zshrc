@@ -79,6 +79,6 @@ smart_env2 () {
     yes | conda install numpy
     pip install ipdb
     }
+}
 
-export CUDA_VISIBLE_DEVICES=''
-alias tm="tmux -CC attach || tmux -CC new"
+alias tm="tmux attach || tmux new"
