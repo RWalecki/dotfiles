@@ -78,7 +78,6 @@ smart_env2 () {
     yes | cd $PWD >/dev/null 2>&1
     yes | conda install numpy
     pip install ipdb
-    }
 }
 
 alias tm="tmux attach || tmux new"
