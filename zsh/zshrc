@@ -34,7 +34,7 @@ esac
 
 export PATH=$PATH:${CONDOR_HOME}/bin
 
-SOURCES=( $HOME/.miniconda $BREW /usr/local /usr /)
+SOURCES=( $HOME/.miniconda $BREW $HOME/.local/ /usr/local /usr /)
 #SOURCES=( $HOME/.local/cuda $HOME/.miniconda $BREW /usr/local /usr /)
 for i in ${SOURCES[*]}; do
 
@@ -57,7 +57,8 @@ export LD_LIBRARY_PATH=$HOME/.cuda/lib64:$LD_LIBRARY_PATH
 export PATH="$HOME/.cuda/bin:$PATH"
 
 # use autoenv to manage virtual environments
-source $BREW/opt/autoenv/activate.sh
+source ~/.miniconda/bin/activate.sh
+
 smart_env3 () {
     dir=${PWD##*/}
     echo $dir
@@ -77,6 +78,7 @@ smart_env2 () {
     yes | cd $PWD >/dev/null 2>&1
     yes | conda install numpy
     pip install ipdb
-}
-export PYTHONPATH=$PYTHONPATH:/Users/robert.walecki/projects/pgm-cv
-export PYTHONPATH=$PYTHONPATH:/Users/robert.walecki/projects/data-science-research/disability-w-pred/utils
+    }
+
+export CUDA_VISIBLE_DEVICES=''
+alias tm="tmux -CC attach || tmux -CC new"

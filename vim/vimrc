@@ -71,9 +71,6 @@ vnoremap j gj
 vnoremap k gk
 
 
-" Block visual mode 
-noremap <Space>v <C-v> 
-
 "enable cursor line in current window only"
 augroup CursorLine
     au!
@@ -114,3 +111,9 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+function RepeatLastCommand()
+  silent exec '!tmux send -t right Up'
+  silent exec '!tmux send -t right Enter'
+  exec ':redraw!'
+endfunction
+noremap <C-r> :call RepeatLastCommand()<CR>
