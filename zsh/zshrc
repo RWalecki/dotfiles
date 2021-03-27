@@ -35,49 +35,20 @@ esac
 export PATH=$PATH:${CONDOR_HOME}/bin
 
 SOURCES=( $HOME/.miniconda $BREW $HOME/.local/ /usr/local /usr /)
-#SOURCES=( $HOME/.local/cuda $HOME/.miniconda $BREW /usr/local /usr /)
+
 for i in ${SOURCES[*]}; do
 
     export PATH=$PATH:$i/bin
     export PATH=$PATH:$i/sbin
     export CPATH=$CPATH:$i/include
     export LIBRARY_PATH=$LIBRARY_PATH:$i/lib
-    #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$i/lib
 
 done
-#export PATH=$PATH:/usr/texbin
-export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin
-
 
 #Python environment and settings
 export PYTHONWARNINGS="ignore"
 
 export LD_LIBRARY_PATH=$HOME/.cuda/lib64:$LD_LIBRARY_PATH
-#export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$HOME/.cuda/lib$DYLD_LIBRARY_PATH
 export PATH="$HOME/.cuda/bin:$PATH"
-
-# use autoenv to manage virtual environments
-source ~/.miniconda/bin/activate.sh
-
-smart_env3 () {
-    dir=${PWD##*/}
-    echo $dir
-    yes | conda create python=3.6 -p $PWD/.$dir
-    echo "source activate $PWD/.$dir" > .env
-    echo ".env*\n.$dir" > .gitignore
-    yes | cd $PWD >/dev/null 2>&1
-    yes | conda install numpy
-    pip install ipdb
-}
-smart_env2 () {
-    dir=${PWD##*/}
-    echo $dir
-    yes | conda create python=2.7 -p $PWD/.$dir
-    echo "source activate $PWD/.$dir" > .env
-    echo ".env*\n.$dir" > .gitignore
-    yes | cd $PWD >/dev/null 2>&1
-    yes | conda install numpy
-    pip install ipdb
-}
 
 alias tm="tmux attach || tmux new"
