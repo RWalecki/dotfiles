@@ -1,9 +1,15 @@
 # Dotfiles
 
-This repo holds my dotfiles. They are specific to my needs but if you are a Python, Vim or UNIX hacker you might find something useful here.
+This repo holds my dotfiles. They are specific to my needs but you might find something useful here if you are a zsh/vim/tmux user.
 
 ## Installation
 
-    bash install.sh
+```sh
+git clone https://github.com/RWalecki/dotfiles.git
+cd dotfiles
+./install.sh
+sudo apt-get install zsh
+exec zsh
+```
 
-This moves your current dotfiles to $HOME/.dotfiles_backup and symlinks the dotfiles folders and files into your home folder.
+NOTE: This installation moves your current dotfiles to $HOME/.dotfiles_backup.
