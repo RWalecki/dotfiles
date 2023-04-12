@@ -2,26 +2,16 @@
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
 bindkey "jk" vi-cmd-mode
 bindkey -M vicmd '/' history-incremental-search-backward
 
 # bolt fonts in terminal
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-#alias ipython='ipython --pylab'
-alias display="display -update 2"
-alias tunnel_vlc='ssh -NfL 44444:localhost:5900 limoges'
-
-#bug with git, can be removed soon
-export SSH_AUTH_SOCK=0
 export HOMEBREW_EDITOR=vim
 export TERM=xterm-256color
 
-
-export PATH=''
-export CPATH=''
-export LIBRARY_PATH=''
-#
 case "$OSTYPE" in
   linux*)   export BREW=$HOME/.linuxbrew ;;
   darwin*)  export BREW=$HOME/.homebrew ;;
@@ -32,7 +22,9 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" ;;
 esac
 
-export PATH=$PATH:${CONDOR_HOME}/bin
+export PATH=''
+export CPATH=''
+export LIBRARY_PATH=''
 
 SOURCES=( $HOME/.miniconda $BREW $HOME/.local/ /usr/local /usr /)
 
@@ -44,9 +36,6 @@ for i in ${SOURCES[*]}; do
     export LIBRARY_PATH=$LIBRARY_PATH:$i/lib
 
 done
-
-#Python environment and settings
-export PYTHONWARNINGS="ignore"
 
 export LD_LIBRARY_PATH=$HOME/.cuda/lib64:$LD_LIBRARY_PATH
 export PATH="$HOME/.cuda/bin:$PATH"
