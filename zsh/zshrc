@@ -15,11 +15,6 @@ export TERM=xterm-256color
 case "$OSTYPE" in
   linux*)   export BREW=$HOME/.linuxbrew ;;
   darwin*)  export BREW=$HOME/.homebrew ;;
-  win*)     echo "Windows" ;;
-  cygwin*)  echo "Cygwin" ;;
-  bsd*)     echo "BSD" ;;
-  solaris*) echo "SOLARIS" ;;
-  *)        echo "unknown: $OSTYPE" ;;
 esac
 
 export PATH=''
@@ -40,7 +35,9 @@ done
 export LD_LIBRARY_PATH=$HOME/.cuda/lib64:$LD_LIBRARY_PATH
 export PATH="$HOME/.cuda/bin:$PATH"
 
-alias tm="tmux attach || tmux new"
+alias tm='tmux attach || tmux new'
+alias gcp='bash '$HOME'/projects/gcp-helper/bin/gcp'
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -56,4 +53,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
