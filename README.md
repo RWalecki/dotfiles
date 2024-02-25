@@ -1,6 +1,17 @@
 # Dotfiles
 
-This repo holds my dotfiles. They are specific to my needs but you might find something useful here if you are a zsh/vim/tmux user.
+This repository contains configuration files for my development environment, focusing on zsh, vim, and tmux. While specific to my setup, you might find helpful configurations if you're familiar with these tools.
+
+# What are dotfiles?
+
+Dotfiles are hidden configuration files found in your home directory that customize your environment. They can improve your productivity and workflow by adjusting settings for your terminal, editor, and other tools.
+
+# Who is this for?
+
+This repository is designed for developers who:
+Use zsh, vim, and tmux.
+Are comfortable with basic command-line operations.
+Appreciate efficient and customized setups.
 
 ## Installation
 
@@ -12,4 +23,8 @@ sudo apt-get install zsh
 exec zsh
 ```
 
-NOTE: This installation moves your current dotfiles to $HOME/.dotfiles_backup.
+Warning: Running the installation script (./install.sh) will back up your existing dotfiles to the $HOME/.dotfiles_backup directory. This is to prevent accidental data loss.
+
+
+Enjoy!
+I hope these dotfiles enhance your development experience. Please feel free to leave feedback or suggestions!
