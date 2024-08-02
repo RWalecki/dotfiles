@@ -23,3 +23,8 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 
 # Update all submodules (vim packages) in the zprezto repository
 git submodule update --init --recursive
+
+wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh" -O miniforge.sh
+bash miniforge.sh -b -p ${HOME}/.miniforge
+rm miniforge.sh
+exec zsh
