@@ -1,7 +1,5 @@
 [user]
-	name = Robert Walecki 
-	email = robert148@me.com
-
+    name = RWalecki 
 
 [core]
     editor = vim
@@ -10,11 +8,12 @@
 
 [alias]
     s = status -s
-	d = difftool
+    p = push
+    a = add
+    d = difftool
     c = commit
     l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --graph
     o = checkout
-    ob = checkout -b
     b = branch
 
 [color]
@@ -38,10 +37,13 @@
     untracked = red bold
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
+
 [push]
     default = matching 
+
 [difftool]
-	prompt = false
+    prompt = false
+
 [merge]
-	tool = vimdiff
+    tool = vimdiff

@@ -31,6 +31,7 @@
 *.log
 *.sql
 *.sqlite
+*.db
  
 # OS generated files #
 ######################
@@ -45,3 +46,4 @@ Thumbs.db
 *.aux
 *.out
 *.ropeproject
+*.vscode
