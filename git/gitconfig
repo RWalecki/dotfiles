@@ -1,5 +1,6 @@
 [user]
-    name = RWalecki 
+    name = RWalecki
+    email = robert148@me.com
 
 [core]
     editor = vim
