@@ -21,7 +21,7 @@ export PATH=''
 export CPATH=''
 export LIBRARY_PATH=''
 
-SOURCES=( $HOME/.miniforge $BREW $HOME/.local/ /usr/local /usr /)
+SOURCES=($HOME/.miniforge $BREW $HOME/.local /usr/local /usr /)
 
 for i in ${SOURCES[*]}; do
 
